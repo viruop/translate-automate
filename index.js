@@ -8,10 +8,9 @@ const langs = {
   3: {},
 };
 
-async function translateText(text) {
+async function translateText(text, toLang) {
   try {
-    const res = await translate(text, { from: "en", to: "hi" });
-    console.log(res.text);
+    const res = await translate(text, { from: "en", to: toLang });
     return res.text;
   } catch (error) {
     console.error(`Translation error: ${error}`);
@@ -22,22 +21,25 @@ async function translateText(text) {
 fs.createReadStream("l.csv")
   .pipe(csv())
   .on("data", async (row) => {
-    const translatedText = await translateText(row.key);
+    const translatedTextHi = await translateText(row.key, "hi");
+    const translatedTextMr = await translateText(row.key, "mr");
+    const translatedTextGu = await translateText(row.key, "gu");
 
-    row.translatedText = translatedText;
+    row._1 = translatedTextHi;
+    row._2 = translatedTextMr;
+    row._3 = translatedTextGu;
 
     fs.appendFileSync("./o.csv", `${Object.values(row).join(",")}\n`);
-    console.log(row);
-    // let _values = Object.values(row);
-    // _values.forEach((d, i) => {
-    //   if (i > 0) {
-    //     console.log(i - 1, _values[0], d);
-    //     langs[i - 1][_values[0]] = d;
-    //   }
-    // });
+    // const translatedText = await translateText(row.key);
+    // row._1 = translatedText;
+    // fs.appendFileSync("./o.csv", `${Object.values(row).join(",")}\n`);
+
+    let _values = Object.values(row);
+    _values.forEach(async (d, i) => {
+      langs[i][_values[0]] = d;
+    });
+    fs.writeFileSync("./languages.json", JSON.stringify(langs));
   })
   .on("end", () => {
     console.log(`Translation complete. The translated CSV file is stored.`);
-    // console.log(langs);
-    // fs.writeFileSync("./languages.json", JSON.stringify(langs));
   });
