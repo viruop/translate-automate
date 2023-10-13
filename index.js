@@ -6,6 +6,7 @@ const langs = {
   1: {},
   2: {},
   3: {},
+  4: {},
 };
 
 async function translateText(text, toLang) {
@@ -24,10 +25,12 @@ fs.createReadStream("l.csv")
     const translatedTextHi = await translateText(row.key, "hi");
     const translatedTextMr = await translateText(row.key, "mr");
     const translatedTextGu = await translateText(row.key, "gu");
+    const translatedTextTa = await translateText(row.key, "ta");
 
     row._1 = translatedTextHi;
     row._2 = translatedTextMr;
     row._3 = translatedTextGu;
+    row._4 = translatedTextTa;
 
     fs.appendFileSync("./o.csv", `${Object.values(row).join(",")}\n`);
     // const translatedText = await translateText(row.key);
