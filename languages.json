@@ -1,16 +1,47 @@
 {
-  "0": { "72 is real": "72 is real", "68 is preposition": "68 is preposition" },
-  "1": { "72 is real": "72 असली है", "68 is preposition": "68 पूर्वसर्ग है" },
+  "0": {
+    "Become a merchant": "Become a merchant",
+    "Share Qr": "Share Qr",
+    "No Transactions Found": "No Transactions Found",
+    "Apply Card": "Apply Card",
+    "No Data Found": "No Data Found",
+    "Link account": "Link account",
+    "No Settlements Found": "No Settlements Found"
+  },
+  "1": {
+    "Become a merchant": "एक व्यापारी बनें",
+    "Share Qr": "शेयर क्यूआर",
+    "No Transactions Found": "कोई परिणाम नहीं मिले",
+    "Apply Card": "कार्ड लागू करें",
+    "No Data Found": "डाटा प्राप्त नहीं हुआ",
+    "Link account": "खाते लिंक करें",
+    "No Settlements Found": "कोई बस्तियां नहीं मिली"
+  },
   "2": {
-    "72 is real": "72 वास्तविक आहे",
-    "68 is preposition": "68 पूर्वसूचना आहे"
+    "Become a merchant": "व्यापारी व्हा",
+    "Share Qr": "QR सामायिक करा",
+    "No Transactions Found": "कोणतेही व्यवहार सापडले नाहीत",
+    "Apply Card": "कार्ड लागू करा",
+    "No Data Found": "माहिती आढळली नाही",
+    "Link account": "दुवा खाते",
+    "No Settlements Found": "कोणतीही वस्ती आढळली नाही"
   },
   "3": {
-    "72 is real": "72 વાસ્તવિક છે",
-    "68 is preposition": "68 પૂર્વનિર્ધારણ છે"
+    "Become a merchant": "વેપારી બનો",
+    "Share Qr": "શેર",
+    "No Transactions Found": "કોઈ વ્યવહાર મળ્યા નથી",
+    "Apply Card": "કાર્ડ લાગુ કરો",
+    "No Data Found": "કોઈ ડેટા મળ્યો નથી",
+    "Link account": "કડી હિસાબ",
+    "No Settlements Found": "કોઈ વસાહતો મળી નથી"
   },
   "4": {
-    "72 is real": "72 உண்மையானது",
-    "68 is preposition": "68 என்பது முன்மொழிவு"
+    "Become a merchant": "ஒரு வணிகராகுங்கள்",
+    "Share Qr": "பகிர்வு QR",
+    "No Transactions Found": "பரிவர்த்தனைகள் எதுவும் கிடைக்கவில்லை",
+    "Apply Card": "அட்டையைப் பயன்படுத்துங்கள்",
+    "No Data Found": "வேறு தகவல்கள் இல்லை",
+    "Link account": "இணைப்பு கணக்கு",
+    "No Settlements Found": "குடியேற்றங்கள் எதுவும் கிடைக்கவில்லை"
   }
 }

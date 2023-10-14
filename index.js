@@ -22,6 +22,9 @@ async function translateText(text, toLang) {
 fs.createReadStream("l.csv")
   .pipe(csv())
   .on("data", async (row) => {
+    if (!row.key) {
+      return;
+    }
     const translatedTextHi = await translateText(row.key, "hi");
     const translatedTextMr = await translateText(row.key, "mr");
     const translatedTextGu = await translateText(row.key, "gu");
@@ -31,11 +34,7 @@ fs.createReadStream("l.csv")
     row._2 = translatedTextMr;
     row._3 = translatedTextGu;
     row._4 = translatedTextTa;
-
     fs.appendFileSync("./o.csv", `${Object.values(row).join(",")}\n`);
-    // const translatedText = await translateText(row.key);
-    // row._1 = translatedText;
-    // fs.appendFileSync("./o.csv", `${Object.values(row).join(",")}\n`);
 
     let _values = Object.values(row);
     _values.forEach(async (d, i) => {
@@ -44,5 +43,7 @@ fs.createReadStream("l.csv")
     fs.writeFileSync("./languages.json", JSON.stringify(langs));
   })
   .on("end", () => {
-    console.log(`Translation complete. The translated CSV file is stored.`);
+    console.log(
+      `Translation complete. The translated CSV and JSON file is stored.`
+    );
   });
